@@ -24,6 +24,7 @@ def get_args_parser():
     parser = argparse.ArgumentParser('freemcg', add_help=False)
     parser.add_argument('--weights', default='torchvision.models.ResNet50_Weights.IMAGENET1K_V2')
     parser.add_argument('--arch', default='torchvision.models.resnet50')
+    parser.add_argument('--diffusion_ckpt_path', default='diffusion_ckpts/openai-guided-diffusion/256x256_diffusion_uncond.pt')
     parser.add_argument('--imagenet_dir', default='/home/wonjun/data/ILSVRC2012/val')
     parser.add_argument('--gpu_id', default=0)
     parser.add_argument('--gpu', default=[0])
@@ -37,7 +38,7 @@ def get_args_parser():
     parser.add_argument('--step_size_prox', default=0.02, type=float)
     parser.add_argument('--strength', default=0.4, type=float)
     parser.add_argument('--eta', default=1.0, type=float)
-    parser.add_argument('--save_root', default='results_sdedit_cntf', type=str)
+    parser.add_argument('--save_root', default='outputs', type=str)
     parser.add_argument('--seed', default=0, type=int)
     return parser
 
@@ -236,9 +237,10 @@ def main():
     # x_sequence = []
     # fx_sequence = []
     
-    diffusion_ckpt_path = os.path.join(
-        'diffusion_ckpts', 'openai-guided-diffusion', '256x256_diffusion_uncond.pt'
-    )
+    # diffusion_ckpt_path = os.path.join(
+    #     'diffusion_ckpts', 'openai-guided-diffusion', '256x256_diffusion_uncond.pt'
+    # )
+    diffusion_ckpt_path = hps.diffusion_ckpt_path
     
     # Load diffusion model
     diffusion_config={
