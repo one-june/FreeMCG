@@ -1,3 +1,7 @@
+## Derivative-Free Diffusion Manifold-Constrained Gradient for Unified XAI (CVPR 2025)
+
+![FreeMCG Concept Figure](freemcg_concept.png)
+
 ### Getting Started
 
 1. Clone the repository
