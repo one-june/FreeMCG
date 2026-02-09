@@ -10,7 +10,7 @@ git clone https://github.com/one-june/FreeMCG.git
 cd FreeMCG
 ```
 
-2. Download pretrained unconditional diffusion model checkpoint (256x256_diffusion.pt) from OpenAI's [`guided-diffusion`](https://github.com/openai/guided-diffusion) repository and place it in the folder `diffusion_ckpts/openai-guided-diffusion`
+2. Download pretrained unconditional diffusion model checkpoint (256x256_diffusion_uncond.pt) from OpenAI's [`guided-diffusion`](https://github.com/openai/guided-diffusion) repository and place it in the folder `diffusion_ckpts/openai-guided-diffusion`
 
 3. Prepare imagenet validation set and input its path as the `--imagenet_dir` argument in `run.sh`.
 
